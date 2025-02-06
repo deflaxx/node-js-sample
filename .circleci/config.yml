@@ -10,7 +10,7 @@ jobs:
     steps:
       - checkout
       - docker/build:
-          image: node-js-sample
+          image: deflaxx/node-js-sample
           tag: latest
       - docker/push:
           image: deflaxx/node-js-sample
