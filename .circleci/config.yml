@@ -15,8 +15,8 @@ jobs:
       - docker/push:
           image: deflaxx/node-js-sample
           tag: latest
-          username: << parameters.docker_username >>
-          password: << parameters.docker_password >>
+          username: $DOCKER_USERNAME
+          password: $DOCKER_PASSWORD
 
 workflows:
   version: 2
