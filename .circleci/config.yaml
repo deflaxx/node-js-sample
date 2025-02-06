@@ -1,0 +1,20 @@
+>version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: cimg/base:stable  # Image de base pour exécuter les commandes
+    steps:
+      - checkout  # Récupère le code du repo
+
+      - setup_remote_docker:
+          version: 20.10.7  # Active Docker dans CircleCI
+
+      - run:
+          name: Build Docker Image
+          command: docker build -t node-js-sample .
+
+      - run:
+          name: Verify Docker Image
+          command: docker images | grep node-js-sample
+
