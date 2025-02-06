@@ -3,11 +3,12 @@ version: 2.1
 orbs:
   docker: circleci/docker@2.8.2
 
+
 workflows:
   build-docker-image:
     jobs:
       - docker/publish:
-        docker-password: DOCKER_PASSWORD
-        docker-username: DOCKER_USERNAME
-        image: deflaxx/node-js-sample
-        tag: 0.1.$CIRCLE_BUILD_NUM
+          docker-password: DOCKER_PASSWORD
+          docker-username: DOCKER_USERNAME
+          image: $DOCKER_USERNAME/node-js-sample
+          tag: 0.1.$CIRCLE_BUILD_NUM 
