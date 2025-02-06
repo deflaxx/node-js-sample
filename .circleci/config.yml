@@ -6,7 +6,8 @@ orbs:
 workflows:
   build-docker-image:
     jobs:
-      docker-password: DOCKER_PASSWORD
-      docker-username: DOCKER_USERNAME
-      image: deflaxx/node-js-sample
-      tag: 0.1.$CIRCLE_BUILD_NUM
+      - docker/publish:
+        docker-password: DOCKER_PASSWORD
+        docker-username: DOCKER_USERNAME
+        image: deflaxx/node-js-sample
+        tag: 0.1.$CIRCLE_BUILD_NUM
