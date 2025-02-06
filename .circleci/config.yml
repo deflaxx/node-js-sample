@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  docker: circleci/docker@2.1.1
+  docker: circleci/docker@2.8.2
 
 jobs:
   build:
@@ -15,8 +15,6 @@ jobs:
       - docker/push:
           image: deflaxx/node-js-sample
           tag: latest
-          username: $DOCKER_USERNAME
-          password: $DOCKER_PASSWORD
 
 workflows:
   version: 2
